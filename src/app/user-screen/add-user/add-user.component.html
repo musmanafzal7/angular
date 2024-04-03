@@ -1,0 +1,237 @@
+<button *ngIf="popupType == 1" class="btn btn-danger" type="button" (click)="openLg(content1)">
+    Add user
+  </button>
+<i *ngIf="popupType == 2"  (click)="onEdit(content1)" style="cursor: pointer;">✎</i>
+<ng-template id="display-modal" #content1 let-c="close" let-d="dismiss" style="cursor: pointer;">
+    <div class="modal-header">
+        <h4 *ngIf="popupType == 1" class="modal-title">Add Item Mapping</h4>
+        <h4 *ngIf="popupType == 2" class="modal-title">Edit Item Mapping</h4>
+        <span class="pointer " aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true" class="pointer">&times;</span>
+        </span>
+    </div>
+    <div class="modal-body">
+        <div class="modal-body p-3">
+            <div class="modal-body">
+                <div class="form_bg">
+                    <form [formGroup]="loginForm" class="form_bg " >
+                        <div class='row pt-2'>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                               
+                                <div class="row mb-2 cstmLabel">
+                                    <div class="col-6">
+                                        <div class="row">
+                                    <div class="col-3">
+                                        <label class="float-right">First&nbsp;Name&nbsp;<code>*</code></label>
+                                    </div>
+                                    <div class="col-9">
+                                           <input formControlName="firstName" maxlength="100" type="text"
+                                                    class="form-control" [(ngModel)]="userSvc.addUserData.firstName"
+                                                    [ngClass]="{ 'is-invalid': f['firstName'].errors }"
+                                         />
+                                         <div *ngIf=" f['firstName'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['firstName'].errors && f['firstName'].errors['required']">First Name is required
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                    <div class="col-3">
+                                        <label class="float-right">Last&nbsp;Name&nbsp;<code>*</code></label>
+                                    </div>
+                                    <div class="col-9">
+                                      
+                                       <input formControlName="lastName" maxlength="100" type="text"
+                                                    class="form-control" [(ngModel)]="userSvc. addUserData.lastName"
+                                                    [ngClass]="{ 'is-invalid': f['lastName'].errors }"
+                                                    />
+                                                    <div *ngIf=" f['lastName'].errors" class="invalid-feedback">
+                                                        <div *ngIf="f['lastName'].errors && f['lastName'].errors['required']">Last Name is required
+                                                        </div>
+                                                    </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                &nbsp;
+                                &nbsp;    
+                                &nbsp;
+                                <div class="row mb-2 cstmLabel">
+                                    <div class="col-6">
+                                        <div class="row">
+                                    <div class="col-3">
+                                        <label class="float-right">Date&nbsp;of&nbsp;Birth<code>*</code></label>
+                                    </div>
+                                    <div class="col-9">
+                                           <input formControlName="dob" type="date"
+                                                    class="form-control" [(ngModel)]="userSvc. addUserData.dob"
+                                         />
+                                    </div>
+                                    
+                                </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                    <div class="col-2">
+                                        <label class="float-right">City<code>*</code></label>
+                                    </div>
+                                    <div class="col-10">
+                                      
+                                       <input formControlName="city" maxlength="100" type="text"
+                                                    class="form-control" [(ngModel)]="userSvc. addUserData.city"
+                                                    />
+                                             
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+
+                                &nbsp;
+                                &nbsp;    
+                                
+                                <div class="row mb-2 cstmLabel">
+                                    <div class="col-6">
+                                        <div class="row">
+                                    <div class="col-3">
+                                        <label class="float-right">Password<code>*</code></label>
+                                    </div>
+                                    <div class="col-9">
+                                           <input formControlName="password" maxlength="100" type="password"
+                                                    class="form-control" [(ngModel)]="userSvc.addUserData.password"
+                                         />
+                                    </div>
+                                    
+                                </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                    <div class="col-4">
+                                        <label class="float-right">Confirm&nbsp;Password<code>*</code></label>
+                                    </div>
+                                    <div class="col-md-8">
+                                      
+                                       <input formControlName="confirmPassword" maxlength="100" type="password"
+                                                    class="form-control" [(ngModel)]="userSvc. addUserData.confirmPassword"
+                                                    />
+                                             
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                &nbsp;
+                                &nbsp;    
+                                
+
+                                <div class="row mb-2 cstmLabel">
+                                    <div class="col-6">
+                                        <div class="row">
+                                    <div class="col-3">
+                                        <label class="float-right">Contact<code>*</code></label>
+                                    </div>
+                                    <div class="col-9">
+                                           <input formControlName="contact" maxlength="100" type="text"
+                                                    class="form-control" [(ngModel)]="userSvc. addUserData.contact"
+                                         />
+                                    </div>
+                                    
+                                </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                    <div class="col-4">
+                                        <label class="float-right">Street&nbsp;Address<code>*</code></label>
+                                    </div>
+                                    <div class="col-md-8">
+                                      
+                                       <input formControlName="streetAddress" maxlength="100" type="text"
+                                                    class="form-control" [(ngModel)]="userSvc. addUserData.streetAddress"
+                                                    />
+                                             
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                                &nbsp;
+                                &nbsp;    
+                                
+                                <div class="row mb-2 cstmLabel">
+                                    <div class="col-3">
+                                        <label class="float-right">Gender</label>
+                                    </div>
+                                    <div class="col-9">
+                                        &nbsp;
+                                        &nbsp;
+                                        &nbsp;
+                                        &nbsp;
+                                        &nbsp;
+                                        &nbsp;
+                                        &nbsp;
+                                        &nbsp;
+                                         &nbsp;
+                                          &nbsp; &nbsp;
+                                          &nbsp;
+                                          &nbsp;
+                                          &nbsp;
+                                          &nbsp;
+                                        <input type="radio" formControlName="gender" [(ngModel)]="userSvc. addUserData.gender" id="maleChoice1" value="male" />
+                                        <label for="maleChoice1">Male</label>
+                                  &nbsp;
+                                  &nbsp;
+                                  &nbsp;
+                                  &nbsp;
+                                  &nbsp;
+                                  &nbsp;
+                                  &nbsp;
+                                  &nbsp;
+                                   &nbsp;
+                                    &nbsp; &nbsp;
+                                    &nbsp;
+                                    &nbsp;
+                                    &nbsp;
+                                    &nbsp;
+                                        <input type="radio" formControlName="gender"  [(ngModel)]="userSvc. addUserData.gender"  id="femaleChoice2"value="Female" />
+                                        <label for="femaleChoice2">Female</label>
+                                  
+                                             
+                                    </div>
+                                </div>
+                                &nbsp;
+                                &nbsp;  
+                                <div class="row mb-2 cstmLabel">
+                                    <div class="col-1">
+                                        <label class="float-right">Email<code>*</code></label>
+                                    </div>
+                                    <div class="col-11">
+                                      
+                                       <input formControlName="email" maxlength="100" type="email"
+                                                    class="form-control" [(ngModel)]="userSvc. addUserData.email"
+                                                    />
+                                             
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                      
+                       
+                    </form>
+                    <div class='row mt-5 mb-3'>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <button class="btn btn-danger cancel float-right" data-bs-dismiss="modal" aria-label="Close"
+                                (click)="d('Cancel click')">Cancel</button>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <button *ngIf="popupType == 1" class="btn btn-primary float-left" 
+                                (click)=" saveuserData()"  (click)="d('Cancel click')" >Save</button>
+                            <button *ngIf="popupType == 2" class="btn btn-primary float-left"
+                            (click)="  updateUser()" (click)="d('Cancel click')">Save</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</ng-template>

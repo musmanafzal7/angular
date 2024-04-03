@@ -1,0 +1,55 @@
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Angular CRUD Operations</span>
+  </div>
+</nav>
+<section>
+        <div class=" form-div container container-fluid h-custom">
+            <h2 class="head">Login Form</h2>
+          <div class="row d-flex justify-content-center align-items-center form-row">
+            <div class="col-md-8 col-lg-12 offset-xl-1">
+              
+            <form [formGroup]="loginForm" class="form_bg " #loginform="ngForm">
+                
+              <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example3">Email address</label>
+                  <input type="email" id="form3Example3" class="form-control form-control1 form-control-lg"
+                    placeholder="Enter a valid email address"formControlName="email" maxlength="100" 
+                     [(ngModel)]="userSvc.addLoginData.email"/>
+                  
+                </div>
+      
+                <!-- Password input -->
+                <div class="form-outline mb-3">
+                    <label class="form-label" for="form3Example4">Password</label>
+                  <input type="password" id="form3Example4" class="form-control form-control1 form-control-lg"
+                    placeholder="Enter password" formControlName="password" maxlength="100"
+                     [(ngModel)]="userSvc.addLoginData.password"/>
+                    </div>
+      
+                <div class="d-flex justify-content-between align-items-center">
+                  <!-- Checkbox -->
+                  <div class="form-check mb-0">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                    <label class="form-check-label" for="form2Example3">
+                      Remember me
+                    </label>
+                  </div>
+           
+                </div>
+      
+                <div class="text-center text-lg-start mt-4 pt-2">
+                  <button type="button" class="btn btn-primary btn-lg"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="saveuserloginData()">Login</button>
+                    <div class="d-flex align-items-center justify-content-center mt-4">
+                    <app-signup-user></app-signup-user>
+                    </div>
+                </div>
+      
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </section>

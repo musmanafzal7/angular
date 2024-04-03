@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+.modal-body {
+    padding: 0px 10px;
+
+  }
+.myCustomModalClass .modal-dialog{
+    max-width: 1000px;
+}
+.head{
+margin-left: 40px;
+margin-top: 40px;
+}
+.form-row{
+  margin-top: 60px;
+}
+.page{
+  display: flex;
+  justify-content: right;
+}
+.form-div{
+  width: 700px;
+  margin-top: 50px;
+  box-shadow: 10px 10px 10px lightgray;
+}
+.table-div{
+margin-top: 10px;
+
+}
+.cancel{
+  margin-left: 370px;
+  color: white;
+}
+.page_entry {
+  font-size: 12px;
+  margin-top: 10px;
+  padding: 2px;
+}
+.pagination {
+  float: right;
+  margin: 5px 0;
+}
+.pagination>li>a,
+.pagination>li>span {
+    color: #068edf;
+}
+.generic_table ::placeholder {
+  font-size: 13px;
+}
+.main_box {
+  background: white;
+  padding: 5px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 23px -10px #202020;
+}
+.table-responsive input {
+  width: auto;
+}
+table thead {
+  border-style: none;
+}
+table th {
+  font-size: 16px !important;
+  padding: 5px 10px !important;
+  color: #fff;
+  background-color: blueviolet !important;
+  text-align: center;
+  border-top: none !important;
+}
+table td {
+  font-size: 14px !important;
+  padding: 5px 10px !important;
+  text-align: center;
+  vertical-align: middle !important; 
+}
